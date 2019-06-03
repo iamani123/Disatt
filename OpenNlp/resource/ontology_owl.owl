@@ -1,0 +1,273 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://purl.org/dc/terms/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:base="http://dissertation/ontology#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://dissertation/ontology">
+    <j.0:contributor>Anirban</j.0:contributor>
+    <j.0:description>Dissertation Ontology</j.0:description>
+    <rdfs:label xml:lang="en">Dissertation Ontology</rdfs:label>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://dissertation/ontology#subject">
+    <rdfs:label xml:lang="en">subject</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://dissertation/ontology#object">
+    <rdfs:label xml:lang="en">object</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#find">
+    <rdfs:label xml:lang="en">How do I read and find my YouTube comments?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#do_use">
+    <rdfs:label xml:lang="en">When do you use ã‚· instead of ã—?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#can_hack">
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+    <rdfs:label xml:lang="en">Motorola (company): Can I hack my Charter Motorolla DCX3400?</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#can">
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+    <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#be_with">
+    <rdfs:label xml:lang="en">Why do girls want to be friends with the guy they reject?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#should_buy">
+    <rdfs:label xml:lang="en">Should I buy tiago?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#can_solve">
+    <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#can_increase">
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+    <rdfs:label xml:lang="en">How can I increase the speed of my internet connection while using a VPN?</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#be">
+    <rdfs:label xml:lang="en">Why do girls want to be friends with the guy they reject?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+    <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+    <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#do_compare_to">
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+    <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#use">
+    <rdfs:label xml:lang="en">How can I increase the speed of my internet connection while using a VPN?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#do_want">
+    <rdfs:label xml:lang="en">Why do girls want to be friends with the guy they reject?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#say_about">
+    <rdfs:label xml:lang="en">Astrology: I am a Capricorn Sun Cap moon and cap rising...what does that say about me?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#be_in">
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+    <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://dissertation/ontology#easy">
+    <rdfs:label xml:lang="en">What can make Physics easy to learn?</rdfs:label>
+    <rdfs:range rdf:resource="http://dissertation/ontology#object"/>
+    <rdfs:domain rdf:resource="http://dissertation/ontology#subject"/>
+  </owl:ObjectProperty>
+  <base:subject rdf:about="http://dissertation/ontology#that">
+    <base:say_about>
+      <base:subject rdf:about="http://dissertation/ontology#I">
+        <base:should_buy>
+          <base:object rdf:about="http://dissertation/ontology#tiago">
+            <rdfs:label xml:lang="en">Should I buy tiago?</rdfs:label>
+          </base:object>
+        </base:should_buy>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#why_mentally_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <base:can_solve>
+          <base:object rdf:about="http://dissertation/ontology#it">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:can_solve>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#good">
+            <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+          </base:object>
+        </base:be>
+        <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+        <rdfs:label xml:lang="en">How can I increase the speed of my internet connection while using a VPN?</rdfs:label>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#very_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <rdfs:label xml:lang="en">Should I buy tiago?</rdfs:label>
+        <base:can>
+          <base:object rdf:about="http://dissertation/ontology#can_geologist">
+            <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+          </base:object>
+        </base:can>
+        <base:can>
+          <base:object rdf:about="http://dissertation/ontology#how_can_geologist">
+            <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+          </base:object>
+        </base:can>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#mentally_very_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <base:can_increase>
+          <base:object rdf:about="http://dissertation/ontology#speed">
+            <rdfs:label xml:lang="en">How can I increase the speed of my internet connection while using a VPN?</rdfs:label>
+          </base:object>
+        </base:can_increase>
+        <rdfs:label xml:lang="en">Astrology: I am a Capricorn Sun Cap moon and cap rising...what does that say about me?</rdfs:label>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#mentally_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#why_mentally_very_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <rdfs:label xml:lang="en">How do I read and find my YouTube comments?</rdfs:label>
+        <base:use>
+          <base:object rdf:about="http://dissertation/ontology#VPN">
+            <rdfs:label xml:lang="en">How can I increase the speed of my internet connection while using a VPN?</rdfs:label>
+          </base:object>
+        </base:use>
+        <base:find>
+          <base:object rdf:about="http://dissertation/ontology#my_YouTube_comment">
+            <rdfs:label xml:lang="en">How do I read and find my YouTube comments?</rdfs:label>
+          </base:object>
+        </base:find>
+        <rdfs:label xml:lang="en">Motorola (company): Can I hack my Charter Motorolla DCX3400?</rdfs:label>
+        <base:can>
+          <base:object rdf:about="http://dissertation/ontology#can_good_geologist">
+            <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+          </base:object>
+        </base:can>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#why_very_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+        <base:can>
+          <base:object rdf:about="http://dissertation/ontology#how_can_good_geologist">
+            <rdfs:label xml:lang="en">How can I be a good geologist?</rdfs:label>
+          </base:object>
+        </base:can>
+        <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+        <rdf:type rdf:resource="http://dissertation/ontology#object"/>
+        <base:can_hack>
+          <base:object rdf:about="http://dissertation/ontology#my_Charter_Motorolla_dcx3400">
+            <rdfs:label xml:lang="en">Motorola (company): Can I hack my Charter Motorolla DCX3400?</rdfs:label>
+          </base:object>
+        </base:can_hack>
+        <base:can_increase>
+          <base:object rdf:about="http://dissertation/ontology#speed_of_my_internet_connection">
+            <rdfs:label xml:lang="en">How can I increase the speed of my internet connection while using a VPN?</rdfs:label>
+          </base:object>
+        </base:can_increase>
+        <base:be>
+          <base:object rdf:about="http://dissertation/ontology#why_lonely">
+            <rdfs:label xml:lang="en">Why am I mentally very lonely? How can I solve it?</rdfs:label>
+          </base:object>
+        </base:be>
+      </base:subject>
+    </base:say_about>
+    <rdfs:label xml:lang="en">Astrology: I am a Capricorn Sun Cap moon and cap rising...what does that say about me?</rdfs:label>
+  </base:subject>
+  <base:subject rdf:about="http://dissertation/ontology#girl">
+    <base:be>
+      <base:object rdf:about="http://dissertation/ontology#friend">
+        <base:be_with>
+          <base:object rdf:about="http://dissertation/ontology#guy">
+            <rdfs:label xml:lang="en">Why do girls want to be friends with the guy they reject?</rdfs:label>
+          </base:object>
+        </base:be_with>
+        <rdfs:label xml:lang="en">Why do girls want to be friends with the guy they reject?</rdfs:label>
+        <rdf:type rdf:resource="http://dissertation/ontology#subject"/>
+      </base:object>
+    </base:be>
+    <base:do_want rdf:resource="http://dissertation/ontology#friend"/>
+    <rdfs:label xml:lang="en">Why do girls want to be friends with the guy they reject?</rdfs:label>
+  </base:subject>
+  <base:subject rdf:about="http://dissertation/ontology#you">
+    <base:do_use>
+      <base:object rdf:about="http://dissertation/ontology#ã_‚_·">
+        <rdfs:label xml:lang="en">When do you use ã‚· instead of ã—?</rdfs:label>
+      </base:object>
+    </base:do_use>
+    <rdfs:label xml:lang="en">When do you use ã‚· instead of ã—?</rdfs:label>
+  </base:subject>
+  <base:subject rdf:about="http://dissertation/ontology#Motorola">
+    <base:can_hack rdf:resource="http://dissertation/ontology#my_Charter_Motorolla_dcx3400"/>
+    <rdfs:label xml:lang="en">Motorola (company): Can I hack my Charter Motorolla DCX3400?</rdfs:label>
+  </base:subject>
+  <base:subject rdf:about="http://dissertation/ontology#physics">
+    <base:easy>
+      <base:object rdf:about="http://dissertation/ontology#learn">
+        <rdfs:label xml:lang="en">What can make Physics easy to learn?</rdfs:label>
+      </base:object>
+    </base:easy>
+    <rdfs:label xml:lang="en">What can make Physics easy to learn?</rdfs:label>
+  </base:subject>
+  <base:subject rdf:about="http://dissertation/ontology#they">
+    <base:do_compare_to>
+      <base:subject rdf:about="http://dissertation/ontology#immigration_law">
+        <base:be_in>
+          <base:object rdf:about="http://dissertation/ontology#Canada">
+            <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+          </base:object>
+        </base:be_in>
+        <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+        <rdf:type rdf:resource="http://dissertation/ontology#object"/>
+      </base:subject>
+    </base:do_compare_to>
+    <base:do_compare_to>
+      <base:object rdf:about="http://dissertation/ontology#immigration_law_in_Canada">
+        <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+      </base:object>
+    </base:do_compare_to>
+    <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+  </base:subject>
+  <base:subject rdf:about="http://dissertation/ontology#green_card">
+    <base:be_in>
+      <base:object rdf:about="http://dissertation/ontology#US">
+        <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+      </base:object>
+    </base:be_in>
+    <rdfs:label xml:lang="en">What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?</rdfs:label>
+  </base:subject>
+</rdf:RDF>

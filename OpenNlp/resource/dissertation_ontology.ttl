@@ -1,0 +1,231 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix base:  <http://dissertation/ontology#> .
+
+base:should_buy  a   owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Should I buy tiago?"@en ;
+        rdfs:range   base:object .
+
+base:mentally_very_lonely
+        a           base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:be  a           owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Why do girls want to be friends with the guy they reject?"@en , "How can I be a good geologist?"@en , "Why am I mentally very lonely? How can I solve it?"@en ;
+        rdfs:range   base:object .
+
+<http://dissertation/ontology#ã_‚_·>
+        a           base:object ;
+        rdfs:label  "When do you use ã‚· instead of ã—?"@en .
+
+base:why_mentally_lonely
+        a           base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:US  a          base:object ;
+        rdfs:label  "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en .
+
+base:Motorola  a       base:subject ;
+        rdfs:label     "Motorola (company): Can I hack my Charter Motorolla DCX3400?"@en ;
+        base:can_hack  base:my_Charter_Motorolla_dcx3400 .
+
+base:tiago  a       base:object ;
+        rdfs:label  "Should I buy tiago?"@en .
+
+base:that  a            base:subject ;
+        rdfs:label      "Astrology: I am a Capricorn Sun Cap moon and cap rising...what does that say about me?"@en ;
+        base:say_about  base:I .
+
+base:my_Charter_Motorolla_dcx3400
+        a           base:object ;
+        rdfs:label  "Motorola (company): Can I hack my Charter Motorolla DCX3400?"@en .
+
+base:do_compare_to  a  owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en ;
+        rdfs:range   base:object .
+
+base:speed  a       base:object ;
+        rdfs:label  "How can I increase the speed of my internet connection while using a VPN?"@en .
+
+base:immigration_law  a  base:subject , base:object ;
+        rdfs:label  "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en ;
+        base:be_in  base:Canada .
+
+base:it  a          base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:be_with  a      owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Why do girls want to be friends with the guy they reject?"@en ;
+        rdfs:range   base:object .
+
+base:I  a                  base:subject , base:object ;
+        rdfs:label         "How can I be a good geologist?"@en , "How can I increase the speed of my internet connection while using a VPN?"@en , "Should I buy tiago?"@en , "Astrology: I am a Capricorn Sun Cap moon and cap rising...what does that say about me?"@en , "How do I read and find my YouTube comments?"@en , "Motorola (company): Can I hack my Charter Motorolla DCX3400?"@en , "Why am I mentally very lonely? How can I solve it?"@en ;
+        base:be            base:why_mentally_lonely , base:good , base:very_lonely , base:mentally_very_lonely , base:mentally_lonely , base:why_mentally_very_lonely , base:lonely , base:why_very_lonely , base:why_lonely ;
+        base:can           base:can_geologist , base:how_can_geologist , base:can_good_geologist , base:how_can_good_geologist ;
+        base:can_hack      base:my_Charter_Motorolla_dcx3400 ;
+        base:can_increase  base:speed , base:speed_of_my_internet_connection ;
+        base:can_solve     base:it ;
+        base:find          base:my_YouTube_comment ;
+        base:should_buy    base:tiago ;
+        base:use           base:VPN .
+
+base:can_solve  a    owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Why am I mentally very lonely? How can I solve it?"@en ;
+        rdfs:range   base:object .
+
+base:find  a         owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "How do I read and find my YouTube comments?"@en ;
+        rdfs:range   base:object .
+
+base:you  a          base:subject ;
+        rdfs:label   "When do you use ã‚· instead of ã—?"@en ;
+        base:do_use  <http://dissertation/ontology#ã_‚_·> .
+
+base:object  a      owl:Class ;
+        rdfs:label  "object"@en .
+
+base:do_use  a       owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "When do you use ã‚· instead of ã—?"@en ;
+        rdfs:range   base:object .
+
+base:they  a                base:subject ;
+        rdfs:label          "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en ;
+        base:do_compare_to  base:immigration_law , base:immigration_law_in_Canada .
+
+base:why_very_lonely  a  base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:say_about  a    owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Astrology: I am a Capricorn Sun Cap moon and cap rising...what does that say about me?"@en ;
+        rdfs:range   base:object .
+
+<http://dissertation/ontology>
+        a           owl:Ontology ;
+        rdfs:label  "Dissertation Ontology"@en ;
+        <http://purl.org/dc/terms/contributor>
+                "Anirban" ;
+        <http://purl.org/dc/terms/description>
+                "Dissertation Ontology" .
+
+base:use  a          owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "How can I increase the speed of my internet connection while using a VPN?"@en ;
+        rdfs:range   base:object .
+
+base:VPN  a         base:object ;
+        rdfs:label  "How can I increase the speed of my internet connection while using a VPN?"@en .
+
+base:good  a        base:object ;
+        rdfs:label  "How can I be a good geologist?"@en .
+
+base:can_good_geologist
+        a           base:object ;
+        rdfs:label  "How can I be a good geologist?"@en .
+
+base:guy  a         base:object ;
+        rdfs:label  "Why do girls want to be friends with the guy they reject?"@en .
+
+base:subject  a     owl:Class ;
+        rdfs:label  "subject"@en .
+
+base:mentally_lonely  a  base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:can_increase  a  owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "How can I increase the speed of my internet connection while using a VPN?"@en ;
+        rdfs:range   base:object .
+
+base:learn  a       base:object ;
+        rdfs:label  "What can make Physics easy to learn?"@en .
+
+base:Canada  a      base:object ;
+        rdfs:label  "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en .
+
+base:do_want  a      owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Why do girls want to be friends with the guy they reject?"@en ;
+        rdfs:range   base:object .
+
+base:green_card  a  base:subject ;
+        rdfs:label  "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en ;
+        base:be_in  base:US .
+
+base:speed_of_my_internet_connection
+        a           base:object ;
+        rdfs:label  "How can I increase the speed of my internet connection while using a VPN?"@en .
+
+base:my_YouTube_comment
+        a           base:object ;
+        rdfs:label  "How do I read and find my YouTube comments?"@en .
+
+base:can  a          owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "How can I be a good geologist?"@en ;
+        rdfs:range   base:object .
+
+base:how_can_good_geologist
+        a           base:object ;
+        rdfs:label  "How can I be a good geologist?"@en .
+
+base:be_in  a        owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en ;
+        rdfs:range   base:object .
+
+base:physics  a     base:subject ;
+        rdfs:label  "What can make Physics easy to learn?"@en ;
+        base:easy   base:learn .
+
+base:friend  a        base:object , base:subject ;
+        rdfs:label    "Why do girls want to be friends with the guy they reject?"@en ;
+        base:be_with  base:guy .
+
+base:how_can_geologist
+        a           base:object ;
+        rdfs:label  "How can I be a good geologist?"@en .
+
+base:can_geologist  a  base:object ;
+        rdfs:label  "How can I be a good geologist?"@en .
+
+base:easy  a         owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "What can make Physics easy to learn?"@en ;
+        rdfs:range   base:object .
+
+base:can_hack  a     owl:ObjectProperty ;
+        rdfs:domain  base:subject ;
+        rdfs:label   "Motorola (company): Can I hack my Charter Motorolla DCX3400?"@en ;
+        rdfs:range   base:object .
+
+base:why_lonely  a  base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:very_lonely  a  base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:immigration_law_in_Canada
+        a           base:object ;
+        rdfs:label  "What are the laws to change your status from a student visa to a green card in the US, how do they compare to the immigration laws in Canada?"@en .
+
+base:why_mentally_very_lonely
+        a           base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:lonely  a      base:object ;
+        rdfs:label  "Why am I mentally very lonely? How can I solve it?"@en .
+
+base:girl  a          base:subject ;
+        rdfs:label    "Why do girls want to be friends with the guy they reject?"@en ;
+        base:be       base:friend ;
+        base:do_want  base:friend .
