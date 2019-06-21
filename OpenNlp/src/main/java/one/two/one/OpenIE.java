@@ -9,7 +9,7 @@ public class OpenIE {
 
   public static void main(String[] args) throws Exception {
     // Create a CoreNLP document
-    Document doc = new Document("What is a narcissistic personality disorder?");
+    Document doc = new Document("Which is the best digital marketing institution in banglore?");
     // Iterate over the sentences in the document
     for (Sentence sent : doc.sentences()) {
       // Iterate over the triples in the sentence

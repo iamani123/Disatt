@@ -1,6 +1,6 @@
 package one.two.one;
 
-
+//This class is generating the triples.
 import edu.stanford.nlp.ie.util.RelationTriple;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
@@ -102,9 +102,10 @@ class ExcelObject{
 	
 	public ExcelObject(String firstColumn, String secondColumn, String thirdColumn, String question) {
 		super();
-		this.firstColumn = firstColumn.replace(" ", "_");
-		this.secondColumn = secondColumn.replace(" ", "_");
-		this.thirdColumn = thirdColumn.replace(" ", "_");
+		
+		this.firstColumn = firstColumn;
+		this.secondColumn = secondColumn;
+		this.thirdColumn = thirdColumn;
 		this.question = question;
 	}
 	String firstColumn;

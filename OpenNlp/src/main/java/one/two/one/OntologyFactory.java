@@ -10,7 +10,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.jena.datatypes.RDFDatatype;
 import org.apache.jena.ontology.DatatypeProperty;
@@ -80,49 +84,158 @@ public class OntologyFactory{
 	private void createExcelInstances() {
 		// Reading the values from the triple store and creating instances dynamically.
 		try {
-		File file = new File("D:\\Subjects\\research\\DATASET\\tripleStore.csv"); 
-		CSVReader reader = new CSVReader(new FileReader("D:\\Subjects\\research\\DATASET\\tripleStore.csv"), ',' , '"' , 1);
+		File file = new File("D:\\Subjects\\dissertation\\DATASET\\tripleStore.csv"); 
+		CSVReader reader = new CSVReader(new FileReader("D:\\Subjects\\dissertation\\DATASET\\tripleStore.csv"), ',' , '"' , 1);
 	    String[] nextLine;
 	    
+	    Map<String, SynSet> synsetMap=getSynSet();
+	    int c=0;
 		while ((nextLine = reader.readNext()) != null) {
 			     if (nextLine != null) {
-			    	 createInstances(nextLine[0], nextLine[1], nextLine[2],nextLine[3]);
+			    	 createInstances(nextLine[0], nextLine[1], nextLine[2],nextLine[3],synsetMap);
 			     }
+			  //   if(c++>10) break;
 			}
 		} catch (Exception e) {e.printStackTrace();}
 	    
 		
 	}
 	
-	public void createInstances(String subjectString, String predicateString, String objectString,String question) {
+	public void createInstances(String subjectString, String predicateString, String objectString,String question, Map<String, SynSet> synsetMap) {
+		SynSet synset=synsetMap.get(question);
 		
+		
+		subjectString=processStrings(subjectString);
+		predicateString=processStrings(predicateString);
+		objectString=processStrings(objectString);
+		
+		
+		/*
+		 * predicateString= predicateString.trim().replaceAll(" ", "_").replaceAll("%",
+		 * "percent") .replaceAll("#", "hash").replaceAll("<", "").replaceAll("=", "eq")
+		 * .replaceAll("^", " "); subjectString= subjectString.trim().replaceAll(" ",
+		 * "_").replaceAll("%", "percent") .replaceAll("#", "hash").replaceAll("<",
+		 * "").replaceAll("=", "eq") .replaceAll("^", " "); objectString=
+		 * objectString.trim().replaceAll(" ", "_").replaceAll("%", "percent")
+		 * .replaceAll("#", "hash").replaceAll("<", "").replaceAll("=", "eq")
+		 * .replaceAll("^", " ");
+		 */
+		
+		if( predicateString.equals(null)||predicateString.equals(" ") || predicateString.equals(""))  
+		{ return; }
+		
+		else {
 		//Setting predicate dynamically.
 		predicate = model.createObjectProperty(base + predicateString);
         predicate.setDomain(subject);
         predicate.setRange(object);
         predicate.addLabel(question,"en");
         
+        for(String s: synset.predicateSet) {
+        	predicate.addComment(s, "en");
+        }
+        
+        
+		}
+	
+        if(subjectString.equals(null)) {
+        	
+        	return; 
+        }
+        
+        else if (subjectString.equals("")|| subjectString.equals(" ")) {
+        	
+        	subjectString="bn";
+        }
+        
+        else {
+        	
         //URI creation for subject and annotating the question.
 		subjectIndividual=subject.createIndividual(base+subjectString);
 		subjectIndividual.addLabel(question,"en");
 		
+		for(String s: synset.subjectSet) {
+        	subjectIndividual.addComment(s, "en");
+        }
+		
+      } 
+        
+        
+        if( objectString.equals(null)||objectString.equals(" ") ||objectString.equals(""))   {
+        	return;
+        }
+        
+        else {
 		//URI creation for object and annotating it with the question.
 		objectIndividual=object.createIndividual(base+objectString);
 		objectIndividual.addLabel(question,"en");
+		
+		for(String s: synset.objectSet) {
+        	objectIndividual.addComment(s, "en");
+        }
+		
+        }
 		
 		//This is where the RDF graph is formed dynamically.
 		subjectIndividual.addProperty(predicate, objectIndividual);
 		
 	}
 	
-	
+	public String processStrings(String words) {
+		
+		words = words.trim().replaceAll(" ", "_").replaceAll("%", "percent")
+				.replaceAll("#", "hash").replaceAll("<", "").replaceAll("=", "eq")
+				.replaceAll("^", "");
+		
+		return words;
+	}
+	/*
+	 * private SynSet getSynSet(String question) { SynSet synSet=new SynSet(); try {
+	 * CSVReader reader = new CSVReader(new
+	 * FileReader("D:\\Subjects\\dissertation\\DATASET\\tripleStore_withsyn.csv"),
+	 * ',' , '"' , 1); String[] nextLine;
+	 * 
+	 * while ((nextLine = reader.readNext()) != null) { if (nextLine != null) {
+	 * String readquestion=nextLine[3]; if(readquestion.equals(question)) {
+	 * synSet.subjectSet.add(nextLine[0]); synSet.predicateSet.add(nextLine[1]);
+	 * synSet.objectSet.add(nextLine[2]); } } } } catch (Exception e)
+	 * {e.printStackTrace();} return synSet; }
+	 */
+	private Map<String, SynSet> getSynSet() {
+		Map<String, SynSet> map=new HashMap<String, SynSet>();
+		try {
+			CSVReader reader = new CSVReader(new FileReader("D:\\Subjects\\dissertation\\DATASET\\tripleStore_withsyn.csv"), ',' , '"' , 1);
+		    String[] nextLine;
+		    
+			while ((nextLine = reader.readNext()) != null) {
+				     if (nextLine != null) {
+				    	 String readquestion=nextLine[3];
+				    	 SynSet synSet=null;
+				    	 if(map.get(readquestion)==null) {
+				    		 synSet=new SynSet();
+				    	 }
+				    	 else {
+				    		 synSet=map.get(readquestion);
+				    	 }
+				    	 synSet.subjectSet.add(nextLine[0]);
+			    		 synSet.predicateSet.add(nextLine[1]);
+			    		 synSet.objectSet.add(nextLine[2]);
+			    		 map.put(readquestion, synSet);
+				     }
+				}
+			} catch (Exception e) {e.printStackTrace();}
+		return map;
+	}
 	public void writeOntology() throws Exception {
 		//Ontology completed -- write to file
         model.write(new FileWriter(polychrest_ontology,false), "TURTLE");
         model.write(new FileOutputStream(new File(owlForm)),"RDF/XML-ABBREV");
        
-	}
-	
-	
-	
+	}	
+}
+
+class SynSet{
+	Set<String> subjectSet=new HashSet<String>();
+	Set<String> predicateSet=new HashSet<String>();
+	Set<String> objectSet=new HashSet<String>();
 }

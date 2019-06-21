@@ -25,7 +25,7 @@ public class SimilarityCalculationDemo {
     public static void main(String[] args) {
         long t = System.currentTimeMillis();
         Arrays.asList(rcs).forEach(rc -> System.out.println(rc.getClass().getName() + "\t" +
-                rc.calcRelatednessOfWords("see", "eye")));
+                rc.calcRelatednessOfWords("laugh", "smirk")));
         System.out.println("\nDone in " + (System.currentTimeMillis() - t) + " msec.");
     }
 }
