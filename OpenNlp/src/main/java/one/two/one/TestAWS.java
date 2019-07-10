@@ -74,24 +74,10 @@ public class TestAWS {
 	
 	public static void main(String[] args) {
 		
-		System.setProperty("wordnet.database.dir", "D:\\11\\Wordnet_2.1\\dict");
 	//	File file = new File("D:\\Subjects\\dissertation\\DATASET\\tripleStore_withsyn.csv");
 		List<ExcelObject> listOfRow=createExcelInstances();
-		List<ExcelObject> listOfSynonymRow=new ArrayList<ExcelObject>();
-		for(ExcelObject row:listOfRow) {
-			String question=row.question;
-			Set<String> subjectSynSet=getDef(row.firstColumn);
-			Set<String> predicateSynSet=getDef(row.secondColumn);
-			Set<String> objectSynSet=getDef(row.thirdColumn);
-			for(String subject:subjectSynSet) {
-				for(String predicate:predicateSynSet) {
-					for(String object:objectSynSet) {
-						listOfSynonymRow.add(new ExcelObject(subject, predicate, object, question));
-					}
-				}
-			}
-			//break;
-		}
+		List<ExcelObject> listOfSynonymRow=getListOfSynonymRow(listOfRow);
+		
 		generateSynonymCsv(listOfSynonymRow);
 		
 		/*
@@ -112,6 +98,27 @@ public class TestAWS {
 		 
 	}
 	
+	public static List<ExcelObject> getListOfSynonymRow(List<ExcelObject> listOfRow) {
+		System.setProperty("wordnet.database.dir", "D:\\11\\Wordnet_2.1\\dict");
+		List<ExcelObject> listOfSynonymRow=new ArrayList<ExcelObject>();
+		for(ExcelObject row:listOfRow) {
+			String question=row.question;
+			Set<String> subjectSynSet=getDef(row.firstColumn);
+			Set<String> predicateSynSet=getDef(row.secondColumn);
+			Set<String> objectSynSet=getDef(row.thirdColumn);
+			for(String subject:subjectSynSet) {
+				for(String predicate:predicateSynSet) {
+					for(String object:objectSynSet) {
+						listOfSynonymRow.add(new ExcelObject(subject, predicate, object, question));
+					}
+				}
+			}
+			//break;
+		}
+		return listOfSynonymRow;
+	}
+
+
 	public static Set<String> getDef(String wordForm) {
 		
         //Creating a set
