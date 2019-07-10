@@ -22,6 +22,8 @@ import org.apache.jena.rdf.model.ModelFactory;
 	public static OntModel loadAllClassesOnt() throws FileNotFoundException {
 		OntModel m = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 	    m.read(new FileInputStream(localSource),null);
+		//m.read(new FileInputStream(OntologyFactory.polychrest_ontology),null);
+		
 	    return m;
 	}	
 	

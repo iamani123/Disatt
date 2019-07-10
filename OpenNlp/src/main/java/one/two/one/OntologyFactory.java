@@ -47,7 +47,6 @@ public class OntologyFactory{
 	public static String base="http://dissertation/ontology#";
 	public static String polychrest_ontology="resource\\dissertation_ontology.ttl";
 	public static String owlForm="resource\\ontology_owl.owl";
-	public static String ontology_owl_version = "resource\\ontologyInOwl.owl";
 	
 	public static OntModel model;
 	public static Ontology ontology;
@@ -104,10 +103,11 @@ public class OntologyFactory{
 	public void createInstances(String subjectString, String predicateString, String objectString,String question, Map<String, SynSet> synsetMap) {
 		SynSet synset=synsetMap.get(question);
 		
-		
+		//processing to remove special chars
 		subjectString=processStrings(subjectString);
 		predicateString=processStrings(predicateString);
 		objectString=processStrings(objectString);
+		
 		
 		
 		/*
@@ -120,6 +120,8 @@ public class OntologyFactory{
 		 * .replaceAll("#", "hash").replaceAll("<", "").replaceAll("=", "eq")
 		 * .replaceAll("^", " ");
 		 */
+		 
+		 
 		
 		if( predicateString.equals(null)||predicateString.equals(" ") || predicateString.equals(""))  
 		{ return; }
@@ -131,9 +133,10 @@ public class OntologyFactory{
         predicate.setRange(object);
         predicate.addLabel(question,"en");
         
-        for(String s: synset.predicateSet) {
-        	predicate.addComment(s, "en");
-        }
+        if(synset!=null)
+	        for(String s: synset.predicateSet) {
+	        	predicate.addComment(s, "en");
+	        }
         
         
 		}
@@ -154,9 +157,10 @@ public class OntologyFactory{
 		subjectIndividual=subject.createIndividual(base+subjectString);
 		subjectIndividual.addLabel(question,"en");
 		
-		for(String s: synset.subjectSet) {
-        	subjectIndividual.addComment(s, "en");
-        }
+		if(synset!=null)
+			for(String s: synset.subjectSet) {
+	        	subjectIndividual.addComment(s, "en");
+	        }
 		
       } 
         
@@ -170,9 +174,10 @@ public class OntologyFactory{
 		objectIndividual=object.createIndividual(base+objectString);
 		objectIndividual.addLabel(question,"en");
 		
-		for(String s: synset.objectSet) {
-        	objectIndividual.addComment(s, "en");
-        }
+		if(synset!=null)
+			for(String s: synset.objectSet) {
+	        	objectIndividual.addComment(s, "en");
+	        }
 		
         }
 		
@@ -182,11 +187,14 @@ public class OntologyFactory{
 	}
 	
 	public String processStrings(String words) {
-		
-		words = words.trim().replaceAll(" ", "_").replaceAll("%", "percent")
+		try {
+		words = words.trim().replaceAll("[^a-zA-Z0-9\\s+]", "").replaceAll(" ", "_").replaceAll("%", "percent")
 				.replaceAll("#", "hash").replaceAll("<", "").replaceAll("=", "eq")
-				.replaceAll("^", "");
-		
+				.replaceAll("^", "").replaceAll("'", "").replaceAll("\\+", "plus");
+		}catch(Exception e) {
+			System.out.println(words+"\n");
+			e.printStackTrace();
+		}
 		return words;
 	}
 	/*

@@ -108,8 +108,14 @@ class ExcelObject{
 		this.thirdColumn = thirdColumn;
 		this.question = question;
 	}
-	String firstColumn;
-	String secondColumn;
-	String thirdColumn;
-	String question;
+	public String firstColumn;
+	public String secondColumn;
+	public String thirdColumn;
+	public String question;
+	@Override
+	public String toString() {
+		return "ExcelObject [firstColumn=" + firstColumn + ", secondColumn=" + secondColumn + ", thirdColumn="
+				+ thirdColumn + ", question=" + question + "]";
+	}
+	
 }
